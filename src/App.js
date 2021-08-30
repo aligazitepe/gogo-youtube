@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SearchBar from "./components/Searchbar";
+import youtubeService from "./services/YoutubeService";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+class App extends React.Component {
+  state = {
+    videos: [],
+    selectedVideo: null,
+  };
+  handleSubmit = (termFromSearchBar) => {
+    youtubeService
+      .get("/search", {
+        params: {
+          q: termFromSearchBar,
+        },
+      })
+      .then((response) => {
+        this.setState({
+          videos: response.data.items,
+        });
+      });
+  };
+  handleVideoSelect = (video) => {
+    this.setState({ selectedVideo: video });
+  };
+
+  resetState = () => {
+    this.setState({ videos: [], selectedVideo: null });
+  };
+
+  render() {
+    return (
+      <div className="ui container" style={{ marginTop: "1em" }}>
+        <header class="header">
+          <a
+            href="#"
+            onClick={() => {
+              this.resetState();
+            }}
+          >
+            <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />
+          </a>
+          <SearchBar handleFormSubmit={this.handleSubmit} />
+
+          <div class="menu-icons">
+            <a href="#">
+              <img src="video-plus.svg" alt="Upload Video" />
+            </a>
+            <a href="#">
+              <img src="apps.svg" alt="Apps" />
+            </a>
+            <a href="#">
+              <img src="bell.svg" alt="Notifications" />
+            </a>
+            <a href="#">
+              <img
+                class="menu-channel-icon"
+                src="http:///unsplash.it/36/36?gravity=center"
+                alt="Your Channel"
+              />
+            </a>
+          </div>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
