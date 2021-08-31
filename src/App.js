@@ -1,8 +1,11 @@
 import React from "react";
 import SearchBar from "./components/Searchbar";
+import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
 import youtubeService from "./services/YoutubeService";
 
 import "./App.css";
+
 class App extends React.Component {
   state = {
     videos: [],
@@ -39,7 +42,7 @@ class App extends React.Component {
               this.resetState();
             }}
           >
-            <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />
+            <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />P
           </a>
           <SearchBar handleFormSubmit={this.handleSubmit} />
 
@@ -62,6 +65,17 @@ class App extends React.Component {
             </a>
           </div>
         </header>
+        <div className="grid-container">
+          <div className="grid-item">
+            <VideoDetail video={this.state.selectedVideo} />
+          </div>
+          <div className="grid-item">
+            <VideoList
+              handleVideoSelect={this.handleVideoSelect}
+              videos={this.state.videos}
+            />
+          </div>
+        </div>
       </div>
     );
   }
