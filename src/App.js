@@ -42,7 +42,7 @@ class App extends React.Component {
               this.resetState();
             }}
           >
-            <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />P
+            <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />
           </a>
           <SearchBar handleFormSubmit={this.handleSubmit} />
 

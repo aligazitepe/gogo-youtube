@@ -1,0 +1,65 @@
+.videoItem {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+}
+
+.thumbnail {
+    position: relative;
+    display: flex;
+}
+
+.thumbnail::before {
+    content: attr(data-duration);
+    position: absolute;
+    background-color: rgba(0, 0, 0, .85);
+    color: white;
+    right: 5px;
+    bottom: 5px;
+    padding: .1em .3em;
+    border-radius: .3em;
+    font-size: .9rem;
+}
+
+.thumbnailImage {
+    width: 100%;
+    height: 100%;
+    width: 168px;
+    height: 94px;
+    background-color: #AAA;
+}
+
+.videoBottomSection {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1rem;
+    margin-left:.75rem;
+}
+
+.videoDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.videoTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.videoChannelName {
+    margin-bottom: 0.1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 150ms;
+}
+
+.videoChannelName:hover {
+    color: #111;
+}
+
+.videoChannelName, .videoMetadata {
+    color: #555;
+}

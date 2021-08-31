@@ -1,24 +1,20 @@
 import React from "react";
+import styles from "./VideoItem.module.css"
 const VideoItem = ({ video, handleVideoSelect }) => {
+  console.log(video)
   return (
-    <div onClick={() => handleVideoSelect(video)} className=" video-item item">
-      <a href="#" class="thumbnail" data-duration="12:24">
+    <div onClick={() => handleVideoSelect(video)} className={styles.videoItem}>
+      <a href="#" className={styles.thumbnail} data-duration="12:24">
         <img
-          class="thumbnail-image"
+          className={styles.thumbnailImage}
           src={video.snippet.thumbnails.medium.url}
         />
       </a>
-      <div class="video-bottom-section">
-        <a href="#">
-          <img
-            class="channel-icon"
-            src={video.snippet.thumbnails.medium.url}
-          />
-        </a>
-        <div class="video-details">
-          <a href="#" class="video-title">
+      <div class={styles.videoBottomSection}>
+        <div className={styles.videoDetails}>
+          <a href="#" class={styles.videoTitle}>
           {video.snippet.title}          </a>
-          <a href="#" class="video-channel-name">
+          <a href="#" class={styles.videoChannelName}>
           {video.snippet.channelTitle}
           </a>
         </div>
