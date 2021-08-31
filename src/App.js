@@ -34,7 +34,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: "1em" }}>
+      <div className="ui container">
         <header class="header">
           <a
             href="#"
@@ -59,7 +59,7 @@ class App extends React.Component {
             <a href="#">
               <img
                 class="menu-channel-icon"
-                src="http:///unsplash.it/36/36?gravity=center"
+                src="https://yt3.ggpht.com/yti/APfAmoG43GcseFdOCv2gJ2YxxlQPAbiTtE2Qb0aZRQ=s88-c-k-c0x00ffffff-no-rj-mo"
                 alt="Your Channel"
               />
             </a>

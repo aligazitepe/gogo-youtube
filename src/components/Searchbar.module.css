@@ -1,12 +1,12 @@
 .searchBar {
     display: flex;
-  
     flex-grow: 1;
     margin: 0 2rem 0 4rem;
   }
   
   .searchInput {
     width: 70%;
+    margin-left:15%;
     font-size: inherit;
     padding: .4em;
     border: 1px solid #777;

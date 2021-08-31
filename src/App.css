@@ -2,13 +2,14 @@
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
-  font-weight:300;
+  font-weight: 300;
 }
 
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -19,8 +20,6 @@ body {
 .youtube-logo {
   height: 20px;
 }
-
-
 
 .search-btn:hover {
   background-color: #F0F0F0;
@@ -39,6 +38,7 @@ body {
   height: 36px;
   background-color: #AAA;
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: 70% 30%;
@@ -49,4 +49,10 @@ body {
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+.grid-container{
+display:inline;
+}
 }
