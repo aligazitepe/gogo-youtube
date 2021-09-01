@@ -2,6 +2,8 @@ import React from "react";
 import SearchBar from "./components/Searchbar";
 import VideoList from "./components/VideoList";
 import VideoDetail from "./components/VideoDetail";
+import Login from "./components/Login";
+
 import youtubeService from "./services/YoutubeService";
 
 import "./App.css";
@@ -10,6 +12,18 @@ class App extends React.Component {
   state = {
     videos: [],
     selectedVideo: null,
+    accessToken: null,
+  };
+  handleLogin = (userData) => {
+    loginService
+      .post("/login", {
+        data: {
+          username: userData,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      });
   };
   handleSubmit = (termFromSearchBar) => {
     youtubeService
@@ -33,20 +47,22 @@ class App extends React.Component {
   };
 
   render() {
+    if (!this.state.accessToken)
+      return <Login handleLogin={this.handleLogin} />;
     return (
       <div className="ui container">
-        <header class="header">
+        <header className="header">
           <a
             href="#"
             onClick={() => {
               this.resetState();
             }}
           >
-            <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />
+            <img src="logo.png" alt="YouTube Logo" className="youtube-logo" />
           </a>
           <SearchBar handleFormSubmit={this.handleSubmit} />
 
-          <div class="menu-icons">
+          <div className="menu-icons">
             <a href="#">
               <img src="video-plus.svg" alt="Upload Video" />
             </a>
@@ -58,7 +74,7 @@ class App extends React.Component {
             </a>
             <a href="#">
               <img
-                class="menu-channel-icon"
+                className="menu-channel-icon"
                 src="https://yt3.ggpht.com/yti/APfAmoG43GcseFdOCv2gJ2YxxlQPAbiTtE2Qb0aZRQ=s88-c-k-c0x00ffffff-no-rj-mo"
                 alt="Your Channel"
               />

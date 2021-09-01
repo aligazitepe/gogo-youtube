@@ -10,11 +10,11 @@ const VideoItem = ({ video, handleVideoSelect }) => {
           src={video.snippet.thumbnails.medium.url}
         />
       </a>
-      <div class={styles.videoBottomSection}>
+      <div className={styles.videoBottomSection}>
         <div className={styles.videoDetails}>
-          <a href="#" class={styles.videoTitle}>
+          <a href="#" className={styles.videoTitle}>
           {video.snippet.title}          </a>
-          <a href="#" class={styles.videoChannelName}>
+          <a href="#" className={styles.videoChannelName}>
           {video.snippet.channelTitle}
           </a>
         </div>

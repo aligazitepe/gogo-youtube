@@ -26,7 +26,7 @@ class Searchbar extends React.Component {
               placeholder="Search Term"
               value={this.state.term}
             />
-            <button type="submit" class={styles.searchBtn}>
+            <button type="submit" className={styles.searchBtn}>
               <img src="magnify.svg" />
             </button>
         </form>
