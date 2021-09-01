@@ -32,6 +32,12 @@ body {
   gap: 1.5rem;
 }
 
+@media only screen and (max-width:1000px) {
+  .menu-icons {
+    display: none;
+  }
+}
+
 .menu-channel-icon {
   border-radius: 50%;
   width: 36px;
@@ -46,13 +52,16 @@ body {
 }
 
 .grid-item {
-  padding: 20px;
+  padding: .8rem;
   font-size: 30px;
   text-align: center;
 }
 
 @media only screen and (max-width: 1000px) {
-.grid-container{
-display:inline;
-}
+  .grid-container {
+    display: inline;
+  }
+  .grid-item{
+    padding:5px;
+  }
 }
