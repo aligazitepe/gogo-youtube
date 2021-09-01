@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### .env
 To run the project, you must create a '.env' file in the root directory of the project and populate the file with the following:
-REACT_APP_API_KEY = <yourAPIKey>
+'REACT_APP_API_KEY=yourAPIKey'
 where yourAPIKEY is the API key to connect YOUTUBE API.
 
 ## Available Scripts
